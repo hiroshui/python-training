@@ -1,1 +1,1 @@
-# Python-Training - Course with Joris
+# Python-Training - Course
