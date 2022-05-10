@@ -2,12 +2,21 @@ from datetime import date, datetime
 from functools import total_ordering
 import math
 
+
+"""_summary_
+Raises:
+    TypeError: _description_
+    AttributeError: _description_
+    AttributeError: _description_
+Returns:
+    _type_: _description_
+"""
 @total_ordering
 class Person:
     def __init__(self, firstname : str, lastname: str, age : str, height : int):
         self._firstname = firstname
         self._lastname = lastname
-        self.birthday = datetime.strptime(age,"%d.%m.%Y")
+        self._birthday = datetime.strptime(age,"%d.%m.%Y")
         self.ageInDays=self.getAgeInDays()
         self.ageInYears=self.getAgeInYears()
         self.height = height
@@ -24,7 +33,7 @@ class Person:
     
     def getAgeInDays(self):
         today = datetime.now()
-        agedif = today - self.birthday
+        agedif = today - self._birthday
         return agedif.days
     
     def say_hello(self):
@@ -65,3 +74,11 @@ class Person:
         #del self._name
 
     fullname = property(get_name, set_name, del_name,"I am the fullname of a person") 
+
+    @property
+    def age(self):
+        return self.getAgeInYears()
+
+    @age.setter
+    def age(self, birthday):
+        self._birthday = datetime.strptime(birthday,"%d.%m.%Y")
