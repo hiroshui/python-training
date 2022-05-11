@@ -1,0 +1,4 @@
+2022-05-10 16:31:06,644 13969 create_token INFO     Run generate token.
+2022-05-10 16:31:06,644 13969 create_token INFO     Create token using hex
+2022-05-10 16:31:06,644 13969 create_token INFO     Send token via mail.
+2022-05-10 16:31:06,644 13969 create_token INFO     Email the token
